@@ -2,9 +2,9 @@
 
 Mobile-ready script for tweeting from Unity WebGL.
 
-## Explanation in Japanese
+## 日本語による説明 / Explanation in Japanese
 
-<https://blog.gigacreation.jp/entry/2020/10/04/223712>
+[モバイルにも対応した、Unity WebGL からツイートができるスクリプトを公開しました](https://blog.gigacreation.jp/entry/2020/10/04/223712)
 
 ## Basic Usage
 
