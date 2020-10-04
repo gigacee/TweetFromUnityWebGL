@@ -88,6 +88,24 @@ You can also tweet with screenshot of the game. Here's an example of using Imgur
 
 `Demo2_TweetWithScreenshot` scene is an example of it.
 
+## Special Characters
+
+- line-break : `%0a`
+- hashtag (#) : `%23`
+
+Example:
+
+`TweetFromUnity("You can include line-breaks%0aand hashtags in your tweet message!%0a%0a%23TweetFromUnityWebGL");`
+
+↓
+
+```
+You can include line-breaks
+and hashtags in your tweet message!
+
+#TweetFromUnityWebGL
+```
+
 ## Installation
 
 All you have to do is copy `/Assets/Plugins/WebGL/plugins.jslib` to your project.
