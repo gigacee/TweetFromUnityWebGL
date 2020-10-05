@@ -4,9 +4,9 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace TweetFromUnityWebgl.Demo
+namespace TweetFromUnityWebgl.Samples
 {
-    public class Demo2_TweetWithScreenshot : MonoBehaviour
+    public class Sample2_TweetWithScreenshot : MonoBehaviour
     {
         [SerializeField] string tweetMessage;
         [SerializeField] string imgurClientId;

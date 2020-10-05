@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace TweetFromUnityWebgl.Demo
+namespace TweetFromUnityWebgl.Samples
 {
-    public class Demo1_Tweet : MonoBehaviour
+    public class Sample1_Tweet : MonoBehaviour
     {
         [SerializeField] string tweetMessage;
 

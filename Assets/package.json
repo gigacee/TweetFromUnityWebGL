@@ -1,0 +1,25 @@
+{
+    "name": "com.gigacee.tweet-from-unity-webgl",
+    "version": "1.0.0",
+    "displayName": "Tweet from Unity WebGL",
+    "description": "Mobile-ready script for tweeting from Unity WebGL.",
+    "unity": "2019.4",
+    "keywords": [
+        "Twitter",
+        "Tweet",
+        "WebGL",
+        "Mobile"
+    ],
+    "author": {
+        "name": "Gigacee",
+        "email": "gigacee@gigacreation.jp",
+        "url": "https://www.gigacreation.jp/"
+    },
+    "samples": [
+        {
+            "displayName": "Samples",
+            "description": "Press the button to go to the tweet screen.",
+            "path": "Samples~"
+        }
+    ]
+}

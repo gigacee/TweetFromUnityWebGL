@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TweetFromUnityWebgl/Demo/Demo1_Tweet.unity
+    path: Assets/Samples/Sample1_Tweet/Sample1_Tweet.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/TweetFromUnityWebgl/Demo/Demo2_TweetWithScreenshot.unity
+    path: Assets/Samples/Sample2_TweetWithScreenshot/Sample2_TweetWithScreenshot.unity
     guid: 7643e5290aae1f9429e7cfd3c3ab792c
   m_configObjects: {}
