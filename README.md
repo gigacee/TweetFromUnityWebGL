@@ -39,7 +39,7 @@ location.href = "twitter://post?message=" + message;
 
 :warning: If the twitter app is not installed in your mobile, this script won't work.
 
-`Demo1_Tweet` scene is an example of it.
+`Sample1_Tweet` scene is an example of it.
 
 ## Tweet with screenshot
 
@@ -90,7 +90,7 @@ You can also tweet with screenshot of the game. Here's an example of using Imgur
     }
 ```
 
-`Demo2_TweetWithScreenshot` scene is an example of it.
+`Sample2_TweetWithScreenshot` scene is an example of it.
 
 ## Special Characters
 
