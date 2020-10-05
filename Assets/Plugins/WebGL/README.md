@@ -112,6 +112,12 @@ and hashtags in your tweet message!
 
 ## Installation
 
+### Unity Package Manager
+
+`https://github.com/Gigacee/tweet-from-unity-webgl.git?path=Assets/Plugins/WebGL`
+
+### Manual
+
 All you have to do is copy `Assets/Plugins/WebGL/plugins.jslib` to your project.
 
 :warning: Be sure to put it in `Assets/Plugins/WebGL/` .
