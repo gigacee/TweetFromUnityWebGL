@@ -1,9 +1,11 @@
 ﻿mergeInto(LibraryManager.library, {
     TweetFromUnity: function (rawMessage) {
         var message = Pointer_stringify(rawMessage);
-        var mobilePattern = /Android|iPhone|iPad|iPod/i;
+        var mobilePattern = /android|iphone|ipad|ipod/i;
 
-        if (window.navigator.userAgent.search(mobilePattern) !== -1) {
+        var ua = window.navigator.userAgent.toLowerCase();
+
+        if (ua.search(mobilePattern) !== -1 || (ua.indexOf("macintosh") !== -1 && "ontouchend" in document)) {
             // Mobile
             location.href = "twitter://post?message=" + message;
         } else {
