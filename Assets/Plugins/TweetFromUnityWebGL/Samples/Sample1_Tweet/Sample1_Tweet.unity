@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9422ba9db76d4484ea7728dda88dfbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweetMessage: Tweet Message
+  _tweetMessage: Tweet Message
 --- !u!4 &909263399
 Transform:
   m_ObjectHideFlags: 0

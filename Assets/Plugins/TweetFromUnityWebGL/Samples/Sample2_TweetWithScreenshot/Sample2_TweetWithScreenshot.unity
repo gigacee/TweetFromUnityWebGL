@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcde1de7827440439b4712977d4aa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweetMessage: Tweet Message
-  imgurClientId: 
+  _tweetMessage: Tweet Message
+  _imgurClientId: 
 --- !u!4 &909263399
 Transform:
   m_ObjectHideFlags: 0

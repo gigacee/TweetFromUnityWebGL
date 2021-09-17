@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.0 (2021-09-18)
+
+- Renamed package name
+
 ## 1.0.1 (2020-10-09)
 
 - Renamed package directory and .jslib file

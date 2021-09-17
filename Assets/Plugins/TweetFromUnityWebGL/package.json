@@ -1,6 +1,6 @@
 {
-    "name": "com.gigacee.tweet-from-unity-webgl",
-    "version": "1.0.1",
+    "name": "com.gigacee.tweetfromunitywebgl",
+    "version": "1.1.0",
     "displayName": "Tweet from Unity WebGL",
     "description": "Mobile-ready script for tweeting from Unity WebGL.",
     "unity": "2019.4",

@@ -8,7 +8,7 @@ Mobile-ready script for tweeting from Unity WebGL.
 
 ## Basic Usage
 
-This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html). You can tweet from WebGL by calling `TweetFromUnity()` in `TweetFromUnityWebgl.jslib` as follows:
+This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html). You can tweet from WebGL by calling `TweetFromUnity()` in `TweetFromUnityWebGL.jslib` as follows:
 
 ```cs
 #if !UNITY_EDITOR && UNITY_WEBGL
@@ -114,10 +114,10 @@ and hashtags in your tweet message!
 
 ### Package Manager
 
-`https://github.com/Gigacee/tweet-from-unity-webgl.git?path=Assets/Plugins/tweet-from-unity-webgl`
+`https://github.com/gigacee/TweetFromUnityWebGL.git?path=Assets/Plugins/TweetFromUnityWebGL`
 
 ### Manual
 
-Copy `Assets/Plugins/tweet-from-unity-webgl/TweetFromUnityWebgl.jslib` to your project.
+Copy `Assets/Plugins/TweetFromUnityWebGL/TweetFromUnityWebGL.jslib` to your project.
 
 :warning: Be sure to put it in `Assets/Plugins/` .
