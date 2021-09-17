@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Original code from https://github.com/ttyyamada/TweetWithScreenShotInWebGL
+// Licensed under https://github.com/ttyyamada/TweetWithScreenShotInWebGL/blob/master/LICENSE
+
+using System;
 using System.Collections;
 using System.Xml.Linq;
 using UnityEngine;
@@ -17,7 +20,6 @@ namespace TweetFromUnityWebGL.Samples
 #if !UNITY_EDITOR && UNITY_WEBGL
         [DllImport("__Internal")]
         private static extern string TweetFromUnity(string rawMessage);
-
 #endif
 
         public void TweetWithScreenshot()
@@ -48,7 +50,7 @@ namespace TweetFromUnityWebGL.Samples
                 XDocument xDoc = XDocument.Parse(www.downloadHandler.text);
                 uri = xDoc.Element("data")?.Element("link")?.Value;
 
-                // Remove ext
+                // Remove Ext
                 uri = uri?.Remove(uri.Length - 4, 4);
             }
 

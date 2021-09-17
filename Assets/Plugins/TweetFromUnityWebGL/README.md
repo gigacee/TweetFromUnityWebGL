@@ -12,20 +12,19 @@ This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interacti
 
 ```cs
 #if !UNITY_EDITOR && UNITY_WEBGL
-    [System.Runtime.InteropServices.DllImport("__Internal")]
-    static extern string TweetFromUnity(string rawMessage);
+    [DllImport("__Internal")]
+    private static extern string TweetFromUnity(string rawMessage);
 #endif
 
     public void Tweet()
     {
 #if !UNITY_EDITOR && UNITY_WEBGL
         TweetFromUnity("Tweet Message");
-        return;
 #endif
     }
 ```
 
-When you run the game on PC, twitter.com will be opened in your browser by this JavaScript:
+When you run your game on PC, twitter.com will be opened in your browser by this JavaScript:
 
 ```js
 window.open("https://twitter.com/intent/tweet?text=" + message, "_blank");
@@ -41,31 +40,39 @@ location.href = "twitter://post?message=" + message;
 
 `Sample1_Tweet` scene is an example of it.
 
-## Tweet with screenshot
+## Tweet with Screenshot
 
-You can also tweet with screenshot of the game. Here's an example of using Imgur:
+You can also tweet with a screenshot of your game. Here's an example of using Imgur:
 
 ```cs
-    [SerializeField] string imgurClientId;
+// Original code from https://github.com/ttyyamada/TweetWithScreenShotInWebGL
+// Licensed under https://github.com/ttyyamada/TweetWithScreenShotInWebGL/blob/master/LICENSE
+
+    [SerializeField] private string _imgurClientId;
 
 #if !UNITY_EDITOR && UNITY_WEBGL
-    [System.Runtime.InteropServices.DllImport("__Internal")]
-    static extern string TweetFromUnity(string rawMessage);
+    [DllImport("__Internal")]
+    private static extern string TweetFromUnity(string rawMessage);
 #endif
 
-    public IEnumerator TweetWithScreenshot()
+    public void TweetWithScreenshot()
+    {
+        StartCoroutine(TweetWithScreenshotCo());
+    }
+
+    private IEnumerator TweetWithScreenshotCo()
     {
         yield return new WaitForEndOfFrame();
 
-        var tex = ScreenCapture.CaptureScreenshotAsTexture();
+        Texture2D tex = ScreenCapture.CaptureScreenshotAsTexture();
 
         var wwwForm = new WWWForm();
         wwwForm.AddField("image", Convert.ToBase64String(tex.EncodeToJPG()));
         wwwForm.AddField("type", "base64");
 
         // Upload to Imgur
-        var www = UnityWebRequest.Post("https://api.imgur.com/3/image.xml", wwwForm);
-        www.SetRequestHeader("AUTHORIZATION", "Client-ID " + imgurClientId);
+        UnityWebRequest www = UnityWebRequest.Post("https://api.imgur.com/3/image.xml", wwwForm);
+        www.SetRequestHeader("AUTHORIZATION", "Client-ID " + _imgurClientId);
 
         yield return www.SendWebRequest();
 
@@ -73,19 +80,15 @@ You can also tweet with screenshot of the game. Here's an example of using Imgur
 
         if (!www.isNetworkError)
         {
-            var xDoc = XDocument.Parse(www.downloadHandler.text);
+            XDocument xDoc = XDocument.Parse(www.downloadHandler.text);
             uri = xDoc.Element("data")?.Element("link")?.Value;
 
-            if (uri != null)
-            {
-                // Remove ext
-                uri = uri.Remove(uri.Length - 4, 4);
-            }
+            // Remove Ext
+            uri = uri?.Remove(uri.Length - 4, 4);
         }
 
 #if !UNITY_EDITOR && UNITY_WEBGL
         TweetFromUnity($"Tweet Message%0a{uri}");
-        yield break;
 #endif
     }
 ```
