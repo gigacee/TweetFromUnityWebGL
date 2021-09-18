@@ -6,6 +6,10 @@ Mobile-ready script for tweeting from Unity WebGL.
 
 [モバイルにも対応した、Unity WebGL からツイートができるスクリプトを公開しました](https://blog.gigacreation.jp/entry/2020/10/04/223712)
 
+## Demo
+
+[Demo Page](https://www.gigacreation.jp/tweetfromunitywebgl/)
+
 ## Basic Usage
 
 This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html). You can tweet from WebGL by calling `TweetFromUnity()` in `TweetFromUnityWebGL.jslib` as follows:
