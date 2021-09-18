@@ -11,6 +11,13 @@ Mobile-ready script for tweeting from Unity WebGL.
 This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html). You can tweet from WebGL by calling `TweetFromUnity()` in `TweetFromUnityWebGL.jslib` as follows:
 
 ```cs
+using UnityEngine;
+#if !UNITY_EDITOR && UNITY_WEBGL
+using System.Runtime.InteropServices;
+#endif
+
+public class Demo1 : MonoBehaviour
+{
 #if !UNITY_EDITOR && UNITY_WEBGL
     [DllImport("__Internal")]
     private static extern string TweetFromUnity(string rawMessage);
@@ -22,9 +29,10 @@ This script uses [.jslib plugin](https://docs.unity3d.com/Manual/webgl-interacti
         TweetFromUnity("Tweet Message");
 #endif
     }
+}
 ```
 
-When you run your game on PC, twitter.com will be opened in your browser by this JavaScript:
+When you run your game on PC, twitter.com will be opened in your browser by this JavaScript code:
 
 ```js
 window.open("https://twitter.com/intent/tweet?text=" + message, "_blank");
@@ -48,6 +56,17 @@ You can also tweet with a screenshot of your game. Here's an example of using Im
 // Original code from https://github.com/ttyyamada/TweetWithScreenShotInWebGL
 // Licensed under https://github.com/ttyyamada/TweetWithScreenShotInWebGL/blob/master/LICENSE
 
+using System;
+using System.Collections;
+using System.Xml.Linq;
+using UnityEngine;
+using UnityEngine.Networking;
+#if !UNITY_EDITOR && UNITY_WEBGL
+using System.Runtime.InteropServices;
+#endif
+
+public class Demo2 : MonoBehaviour
+{
     [SerializeField] private string _imgurClientId;
 
 #if !UNITY_EDITOR && UNITY_WEBGL
@@ -91,6 +110,7 @@ You can also tweet with a screenshot of your game. Here's an example of using Im
         TweetFromUnity($"Tweet Message%0a{uri}");
 #endif
     }
+}
 ```
 
 `Sample2_TweetWithScreenshot` scene is an example of it.
